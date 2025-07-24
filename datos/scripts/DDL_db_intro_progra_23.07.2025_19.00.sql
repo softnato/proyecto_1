@@ -1,4 +1,4 @@
-use 'proyecto_intro';
+use proyecto_intro;
 
 CREATE TABLE opciones_menu(
     id integer not null AUTO_INCREMENT,
@@ -29,11 +29,11 @@ CREATE TABLE docentes(
 );
 
 create TABLE asignaturas_docentes(
-    id integer not null AUTO_INCREMENT
+    id integer not null AUTO_INCREMENT,
     id_asignatura integer not null,
     id_docente integer not null,
 
     constraint pk_asignaturas_docentes primary key (id),
-    constraint fk_asignaturas foreign key (id_asignatura) references asignaturas (id)
+    constraint fk_asignaturas foreign key (id_asignatura) references asignaturas (id),
     constraint fk_docentes foreign key (id_docente) references docentes(id)
 );
